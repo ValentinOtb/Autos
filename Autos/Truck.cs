@@ -6,7 +6,46 @@ using System.Threading.Tasks;
 
 namespace Autos
 {
-    class Truck
+    public enum Goods
     {
+        food,
+        materials
+    }
+    public abstract class Truck : Car
+    {
+        private int maxTrailerWeight;
+        private int trailerWeight;
+
+        public Goods Goods { get; set; }
+
+        public int MaxTrailerWeight
+        {
+            get
+            {
+                return maxTrailerWeight;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    maxTrailerWeight = value;
+                }
+            }
+        }
+
+        public int TrailerWeight
+        {
+            get
+            {
+                return trailerWeight;
+            }
+            set
+            {
+                if (value <= maxTrailerWeight)
+                {
+                    trailerWeight = value;
+                }
+            }
+        }
     }
 }

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Runtime.Serialization.Json;
+using System.IO;
 
 namespace Autos
 {
@@ -23,6 +25,23 @@ namespace Autos
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Do()
+        {
+            PassengerCar pc = new PassengerCar();
+            pc.Name = "Nissan GTR";
+            pc.Number = "9999 AB";
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(PassengerCar));
+            FileStream fs = File.OpenWrite(@"C:/Users/Valentin/Desktop/json.txt");
+            ser.WriteObject(fs, pc);
+            fs.Dispose();
+        }
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            Do();
+            TextBox1.Text = File.ReadAllText(@"C:/Users/Valentin/Desktop/json.txt");
         }
     }
 }
