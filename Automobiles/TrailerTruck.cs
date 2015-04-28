@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Autos
+namespace Automobiles
 {
     public class TrailerTruck : Truck
     {
@@ -19,7 +19,7 @@ namespace Autos
             : base()
         {
             HasTrailer = false;
-            TextualRepresentation = "Trailer truck";
+            Fields.Add("HasTrailer", HasTrailer);
         }
     }
 }

@@ -1,10 +1,46 @@
-﻿<Window x:Class="Autos.MainWindow"
+﻿<Window x:Name="Load" x:Class="Autos.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="480.597" Width="475.254" Loaded="Load_Loaded">
     <Grid>
-        <Button x:Name="Button1" Content="Button" HorizontalAlignment="Left" Margin="196,95,0,0" VerticalAlignment="Top" Width="75" Click="Button1_Click"/>
-        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="78" Margin="112,198,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="337"/>
+        <ComboBox x:Name="comboBoxCarTypes" HorizontalAlignment="Left" Margin="36,30,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.225,-0.539">
+            <ComboBoxItem>Passenger car</ComboBoxItem>
+            <ComboBoxItem>Trailer truck</ComboBoxItem>
+            <ComboBoxItem>Ambulance</ComboBoxItem>
+        </ComboBox>
+        <Label x:Name="labelCar" Content="Car" HorizontalAlignment="Left" Margin="36,140,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="23" Margin="36,175,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBoxColor" HorizontalAlignment="Left" Height="23" Margin="36,231,0,0" TextWrapping="Wrap" Text="Color" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBoxNumber" HorizontalAlignment="Left" Height="23" Margin="36,203,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBoxHP" HorizontalAlignment="Left" Height="23" Margin="36,259,0,0" TextWrapping="Wrap" Text="Horse power" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBoxMaxSpeed" HorizontalAlignment="Left" Height="23" Margin="36,287,0,0" TextWrapping="Wrap" Text="Max speed" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBoxSpeed" HorizontalAlignment="Left" Height="23" Margin="36,315,0,0" TextWrapping="Wrap" Text="Speed" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBoxWeight" HorizontalAlignment="Left" Height="23" Margin="36,343,0,0" TextWrapping="Wrap" Text="Weight" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBoxTotalSeats" HorizontalAlignment="Left" Height="23" Margin="173,176,0,0" TextWrapping="Wrap" Text="Total seats" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <CheckBox x:Name="checkBoxEngineOn" Content="Engine on" HorizontalAlignment="Left" Margin="36,371,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.211,6.01"/>
+        <Label x:Name="labelPassengerCar" Content="Passenger car" HorizontalAlignment="Left" Margin="173,140,0,0" VerticalAlignment="Top" Width="120
+               " FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="textBoxPassengers" HorizontalAlignment="Left" Height="23" Margin="173,204,0,0" TextWrapping="Wrap" Text="Passengers count" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="173,232,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <CheckBox x:Name="checkBoxFrontDrive" Content="Front drive" HorizontalAlignment="Left" Margin="173,260,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelTruck" Content="Truck" HorizontalAlignment="Left" Margin="173,279,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.099,0.067" Width="120" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="textBoxMaxTrailerWeight" HorizontalAlignment="Left" Height="23" Margin="173,343,0,0" TextWrapping="Wrap" Text="Max trailer weight" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBoxGoods" HorizontalAlignment="Left" Height="23" Margin="173,315,0,0" TextWrapping="Wrap" Text="Goods" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="textBoxTrailerWeight" HorizontalAlignment="Left" Height="23" Margin="173,372,0,0" TextWrapping="Wrap" Text="Trailer weight" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <Label x:Name="labelSpecialCar" Content="Special car" HorizontalAlignment="Left" Margin="314,140,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="textBoxCallNumber" HorizontalAlignment="Left" Height="23" Margin="314,176,0,0" TextWrapping="Wrap" Text="Call number" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <CheckBox x:Name="checkBoxFlasherOn" Content="Flasher on" HorizontalAlignment="Left" Margin="314,204,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelAmbulance" Content="Ambulance" HorizontalAlignment="Left" Margin="314,224,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold"/>
+        <CheckBox x:Name="checkBoxPatientInside" Content="Patient inside" HorizontalAlignment="Left" Margin="314,260,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelTrailerTruck" Content="Trailer truck" HorizontalAlignment="Left" Margin="314,280,0,0" VerticalAlignment="Top" Width="120" FontSize="16" FontWeight="Bold"/>
+        <CheckBox x:Name="checkBoxHasTrailer" Content="Has trailer" HorizontalAlignment="Left" Margin="317,313,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBoxCars" HorizontalAlignment="Left" Margin="314,30,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBoxCars_SelectionChanged_1"/>
+        <Button x:Name="buttonNewCar" Content="New Car" HorizontalAlignment="Left" Margin="173,30,0,0" VerticalAlignment="Top" Width="50" Click="buttonNewCar_Click"/>
+        <Button x:Name="buttonSerialize" Content="Serialize" HorizontalAlignment="Left" Margin="36,89,0,0" VerticalAlignment="Top" Width="120" Click="buttonSerialize_Click"/>
+        <Button x:Name="buttonDeserialize" Content="Deserialize" HorizontalAlignment="Left" Margin="173,89,0,0" VerticalAlignment="Top" Width="120" Click="buttonDeserialize_Click"/>
+        <TextBox x:Name="textBoxFilePath" HorizontalAlignment="Left" Height="23" Margin="314,89,0,0" TextWrapping="Wrap" Text="File path" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="buttonRemove" Content="Remove" HorizontalAlignment="Left" Margin="243,30,0,0" VerticalAlignment="Top" Width="50" Click="buttonRemove_Click"/>
+        <Button x:Name="buttonApply" Content="Apply" HorizontalAlignment="Left" Margin="194,420,0,0" VerticalAlignment="Top" Width="75" Click="buttonApply_Click"/>
 
     </Grid>
 </Window>

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Autos
+namespace Automobiles
 {
     public abstract class Car
     {
-        public string TextualRepresentation = "";
+        public Dictionary<string, dynamic> Fields = new Dictionary<string, dynamic>();
         private int weight;
         private int maxSpeed;
         private int horsePower;
@@ -68,22 +68,17 @@ namespace Autos
             }
         }
 
-        public Car(string name, string number, string color,
-            bool engineOn, int maxSpeed, int speed,
-            int weight, int horsePower)
-        {
-            this.Name = name;
-            this.Number = number;
-            this.Color = color;
-            this.EngineOn = engineOn;
-            this.MaxSpeed = maxSpeed;
-            this.Speed = speed;
-            this.Weight = weight;
-            this.HorsePower = horsePower;
-        }
         public Car()
-            : this("", "", "", false, 0, 0, 0, 0)
         {
+            Fields.Add("Weight", Weight);
+            Fields.Add("Speed", Speed);
+            Fields.Add("MaxSpeed", MaxSpeed);
+            Fields.Add("HorsePower", HorsePower);
+            Fields.Add("EngineOn", EngineOn);
+            Fields.Add("Color", Color);
+            Fields.Add("Number", Number);
+            Fields.Add("Name", Name);
+            Color = "black";
         }
     }
 }

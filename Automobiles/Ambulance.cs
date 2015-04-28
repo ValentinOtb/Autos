@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Autos
+namespace Automobiles
 {
     public class Ambulance : SpecialCar
     {
@@ -12,8 +12,7 @@ namespace Autos
 
         public Ambulance()
         {
-            TextualRepresentation = "Ambulance";
-        }
 
+        }
     }
 }

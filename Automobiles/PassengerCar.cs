@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Autos
+namespace Automobiles
 {
     public class PassengerCar : Car
     {
@@ -56,17 +56,12 @@ namespace Autos
             }
         }
 
-        public PassengerCar(int totalSeats, int passengersCount, bool frontDrive)
+        public PassengerCar()
             : base()
         {
-            this.TotalSeats = totalSeats;
-            this.PassengersCount = passengersCount;
-            this.FrontDrive = frontDrive;
-            TextualRepresentation = "Passenger car";
-        }
-        public PassengerCar()
-            : this(0, 0, false)
-        {
+            Fields.Add("FrontDrive", FrontDrive);
+            Fields.Add("TotalSeats", TotalSeats);
+            Fields.Add("PassengersCount", PassengersCount);
         }
     }
 }

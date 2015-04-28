@@ -4,19 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Autos
+namespace Automobiles
 {
     public class SpecialCar : Car
     {
         public string CallNumber { get; set; }
-        private Flasher flasher = new Flasher();
-        public Flasher Flasher
-        {
-            get
-            {
-                return flasher;
-            }
-        }
+        public Flasher flasher = new Flasher();
 
         public SpecialCar()
             : this(null)
@@ -28,6 +21,8 @@ namespace Autos
             : base()
         {
             CallNumber = callNumber;
+            Fields.Add("CallNumber", CallNumber);
+            Fields.Add("FlasherOn", flasher.IsOn);
         }
 
     }
